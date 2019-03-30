@@ -1,0 +1,124 @@
+header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); }
+  header .headerLeft {
+    padding: 0.1em 0 0 0.5em; }
+  header .headerRight input[type="checkbox"] {
+    display: none; }
+
+@media (min-width: 1px) {
+  header {
+    background: none; }
+    header .headerLeft {
+      grid-column: span 12;
+      background: #000000; }
+    header .headerRight {
+      grid-column: span 12;
+      background: #CCCCCC; }
+      header .headerRight .navButton {
+        position: absolute;
+        float: right;
+        height: 40px;
+        width: 44px;
+        background: #CCCCCC;
+        top: 0.5em;
+        right: 0.5em;
+        cursor: pointer; }
+        header .headerRight .navButton .hamburger {
+          height: 2px;
+          width: 22px;
+          background: #000000;
+          position: absolute;
+          transform-origin: center;
+          transition: .3s ease; }
+        header .headerRight .navButton .bar01 {
+          top: 8px;
+          left: 11px; }
+        header .headerRight .navButton .bar02 {
+          top: 14px;
+          left: 11px; }
+        header .headerRight .navButton .bar03 {
+          top: 20px;
+          left: 11px; }
+        header .headerRight .navButton .buttonText:after {
+          position: absolute;
+          top: 28px;
+          font-size: 0.5em;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-family: helvetica, sans-serif;
+          transform-origin: center;
+          transition: .3s ease; }
+      header .headerRight input[type="checkbox"]:checked + .navButton {
+        /* Animation when checked */
+        background: #FFFFFF; }
+        header .headerRight input[type="checkbox"]:checked + .navButton .bar01 {
+          /* Moves the top bar 45 degrees to form the X when the button is clicked. */
+          transform: translateY(6px) rotate(45deg); }
+        header .headerRight input[type="checkbox"]:checked + .navButton .bar02 {
+          /* Middle bar vanishes when the button is clicked. */
+          opacity: 0; }
+        header .headerRight input[type="checkbox"]:checked + .navButton .bar03 {
+          /* Moves the bottom bar 45 degrees to form the X when the button is clicked. */
+          transform: translateY(-6px) rotate(-45deg); }
+        header .headerRight input[type="checkbox"]:checked + .navButton .buttonText:after {
+          /* Replaces "Menu" with "Close" on the button. */
+          content: "Close";
+          left: 7px; }
+      header .headerRight input[type="checkbox"]:checked ~ nav {
+        height: 10em; }
+      header .headerRight input[type="checkbox"] + .navButton .buttonText:after {
+        /* Replaces "Close" with "Menu" on the button. */
+        content: "Menu";
+        left: 9px; }
+      header .headerRight nav {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        height: 0;
+        transform-origin: center;
+        transition: .3s ease; }
+        header .headerRight nav .navMenu {
+          list-style-type: none; }
+          header .headerRight nav .navMenu li {
+            text-align: center; }
+            header .headerRight nav .navMenu li a:link, header .headerRight nav .navMenu li a:visited {
+              font-family: helvetica, sans-serif;
+              color: #FF0000;
+              text-decoration: none;
+              display: block;
+              width: 100%;
+              height: 2em;
+              padding: 0.7em 0 0 0; }
+            header .headerRight nav .navMenu li a:hover, header .headerRight nav .navMenu li a:focus {
+              color: #FFFFFF;
+              background: #000000; } }
+@media (min-width: 768px) {
+  header {
+    background: #000000; }
+    header .headerLeft {
+      background: none;
+      grid-column: span 4; }
+    header .headerRight {
+      background: none;
+      grid-column: span 8;
+      padding: 0 1em 0 0;
+      text-align: right; }
+      header .headerRight .navButton {
+        display: none; }
+      header .headerRight nav {
+        position: relative;
+        display: inline-block;
+        overflow: visible; }
+        header .headerRight nav .navMenu {
+          display: block; }
+          header .headerRight nav .navMenu li {
+            float: left; }
+            header .headerRight nav .navMenu li a:link, header .headerRight nav .navMenu li a:visited {
+              color: #FFFFFF;
+              width: none;
+              height: auto;
+              padding: 0.3em 0.5em 0.5em 0.5em; }
+            header .headerRight nav .navMenu li a:hover, header .headerRight nav .navMenu li a:focus {
+              color: #FFFFFF;
+              border-bottom: 1px solid #FF0000; } }

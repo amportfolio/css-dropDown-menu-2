@@ -1,0 +1,13 @@
+// Page Necessities
+//
+// While this menu is powered by CSS Grid,
+// you will still need these two items to
+// make things work responsively.
+
+* {
+  box-sizing: border-box;
+}
+
+ body {
+  overflow-y: scroll;
+}

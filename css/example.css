@@ -1,0 +1,20 @@
+/**
+ * Other Elements
+ * These are just styles for the headline and the paragraphs.
+ */
+
+ h1 {
+  font-family: helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-bottom: 1px solid #000000;
+  margin: 1em 0 0 0;
+  padding: 0 0 0.3em 0;
+}
+
+p {
+  font-family: helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  margin: 1em 0 0 0;
+}

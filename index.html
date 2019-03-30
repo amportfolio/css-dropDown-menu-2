@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<title>CSS-only Drop-Down Hamburger Menu 2.0</title>
+
+	<!-- Basic Grid CSS -->
+	<link href="css/normalizeReset.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900" rel="stylesheet">
+
+	<!-- CSS styles for this presentation -->
+	<link href="css/presentation.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="mainContent">
+
+	<h1 class="textCenter">CSS-only Drop-Down<br>Hamburger Menu</h1>
+	<p class="textCenter version">Version 2.0 by Alex Moschopoulos</p>
+
+	<h2>Introduction</h2>
+	<p>After updating my Basic Grid framework to <a href="https://www.amportfolio.com/code/basic-grid-2/example">2.0</a>, I still wanted a header and drop-down menu system the way I did with 1.0. However, I desired to pull away from using floats and margins and see how I can use CSS Grid to improve on this.</p>
+	<p class="addMarginBtm3">Now I know hamburger menus have been a source of contention and debate in the UX community, but they are here to stay. It&rsquo;s really up to the UX Designer to do everything in his/her power to make sure the end user isn&rsquo;t confused on where to go. I do have plans to create a version of this menu that collapses to a smaller menu on the bottom...for those not into the hamburger.</p>
+
+	<h2>Before you use this...</h2>
+	<p>Unlike version 1.0, you do not need to use my Basic Grid system to utilize this menu <em>(you can actually use this as a standalone)</em>, but you will need this CSS class set in order to make things work effectively in responsive design:
+	<div class="grayCell code addMarginBtm2">
+		<span class="green">*</span> {<br>
+		<span class="purple sinIndent">box-sizing</span>: border-box;<br>
+		}
+	</div>
+	<p class="addMarginBtm3">Again, I also used <a href="github.com/necolas/normalize.css">Normalize</a> and <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&rsquo;s reset</a> for improved cross-browser rendering. I did include a minified version of the two with the download, or you can use your own.</p>
+
+	<h2>Setup and Configuration</h2>
+	<p>The download contains a nested CSS file for those who don&rsquo;t want to mess with SCSS <em>(although you should learn it...it&rsquo;s so worth it)</em>.</p>
+	<p>For those using SCSS, you will need to open the <em>_config.scss</em> and set up these two configuration variables: 
+	<div class="grayCell code addMarginBtm2">
+		<span class="gray">// Number of menu items you want</span><br>
+		<span class="purple">$number-menu-items</span>: 5;<br><br>
+		<span class="gray">// Individual height of menu items</span><br>
+		<span class="purple">$menu-item-height</span>: 2em;
+	</div>
+	<p>These two configuration items are important because it&rsquo;s needed to mathematically determine the height of the drop-down menu when one is in mobile. In order to semantically keep the menu an unordered list, but have the animation of the menu sliding down, a height was needed.</p>
+	<p>If you are more akin to using the straight CSS, then you&rsquo;ll need to set the height of the drop-down menu on line 74 of the CSS code:</p>
+	<div class="grayCell code addMarginBtm2">
+		<span class="dkBlue">header</span> <span class="green">.headerRight</span> <span class="dkBlue">input</span>[<span class="dkBlue">type</span>=<span class="red">&quot;checkbox&quot;</span>]:checked ~ <span class="dkBlue">nav</span> {<br>
+		<span class="purple sinIndent">height</span>: 10em;<br>
+    	}
+	</div>
+	<p>Your final number should be the <strong>number of items in your menu multiplied by the height of each item item as you see fit</strong>.</p>
+	<p>You&rsquo;ll also need to decide if you want the menu to be fixed at the top or scroll with content. Just a true or false on this configuration variable: 
+	<div class="grayCell code addMarginBtm1">
+		<span class="gray">// Should this menu be fixed at the top?</span><br>
+		<span class="gray">// Place &quot;true&quot; in the variable if you want to,</span><br>
+		<span class="gray">// or &quot;false&quot; if you do not.</span><br>
+		<span class="purple">$menuFixed</span>: false;
+	</div>
+	<p><strong>NOTE:</strong> At the time of this writing, the <span class="code"><span class="purple">position</span>:sticky</span> feature has <a href="https://caniuse.com/#feat=css-sticky">not gained full browser compliance</a>, so be sure to do plenty of QA if you choose to use this.</p>
+	<p>The fonts and colors are up to you, but you can also change the labels that go on the menu button itself. Just be aware that you might have to tweak the placement in the CSS depending on what you enter.</p>
+	<div class="grayCell code addMarginBtm2">
+		<span class="gray">// Labels for the button that go under the hamburger.</span><br>
+		<span class="gray">// Bear in mind you might have to play with the</span><br>
+		<span class="gray">// placement depending on what you put.</span><br>
+		<span class="purple">$menuTerm:</span> &quot;Menu&quot;;<br>
+		<span class="purple">$closeTerm:</span> &quot;Close&quot;;
+	</div>
+	<p class="addMarginBtm3">Now let&rsquo;s look at some examples.</p>
+	<h2>Example 1: Standard Menu</h2>
+	<p class="addMarginBtm1">The original header and menu that will scroll with content.</p>
+	<div class="addMarginBtm3">
+		<p class="codepen" data-height="400" data-theme-id="0" data-default-tab="css,result" data-user="amportfolio" data-slug-hash="wOGjBv" data-preview="true" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="CSS-only Drop-Down Hamburger Menu using CSS Grid">
+			<span>See the Pen <a href="https://codepen.io/amportfolio/pen/wOGjBv/">
+			CSS-only Drop-Down Hamburger Menu using CSS Grid</a> by Alex Moschopoulos (<a href="https://codepen.io/amportfolio">@amportfolio</a>)
+			on <a href="https://codepen.io">CodePen</a>.</span>
+		</p>
+	</div>
+	<h2>Example 2: Sticky Header Menu</h2>
+	<p class="addMarginBtm1">The same header and menu only fixed to the top so it does not scroll with the content.</p>
+	<div class="addMarginBtm3">
+		<p class="codepen" data-height="400" data-theme-id="0" data-default-tab="css,result" data-user="amportfolio" data-slug-hash="xBmYrM" data-preview="true" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="CSS-only Drop-Down Sticky Hamburger Menu using CSS Grid">
+			<span>See the Pen <a href="https://codepen.io/amportfolio/pen/xBmYrM/">
+			CSS-only Drop-Down Sticky Hamburger Menu using CSS Grid</a> by Alex Moschopoulos (<a href="https://codepen.io/amportfolio">@amportfolio</a>)
+			on <a href="https://codepen.io">CodePen</a>.</span>
+		</p>
+	</div>
+	<h2>Questions? Comments? Suggestions?</h2>
+	<p class="addMarginBtm3">Please feel free to <a href="https://amportfolio.com/contact">reach out</a>!</p>
+	<p class="copyright textCenter">&copy; 2019 | All rights reserved</p>
+</div>
+
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+</body>
+</html>

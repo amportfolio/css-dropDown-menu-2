@@ -1,0 +1,43 @@
+// Setup Elements
+// Using SCSS to set up certain elements of the menu for ease.
+
+// Number of menu items you want
+$number-menu-items: 5;
+
+// Individual height of menu items
+$menu-item-height: 2em;
+
+// Should this menu be fixed at the top?
+// Place "true" in the variable if you want to,
+// or "false" if you do not.
+$menuFixed: true;
+
+// Labels for the button that go under the hamburger.
+// Bear in mind you might have to play with the
+// placement depending on what you put.
+$menuTerm: "Menu";
+$closeTerm: "Close";
+
+// Fonts
+$buttonLabel: helvetica,sans-serif;
+$linkFont: helvetica,sans-serif;
+
+// Colors
+//
+$headerBgColor: #000000;
+
+// Hamburger Button Colors
+$hamButtonBgColorClosed: #CCCCCC;
+$hamButtonBgColorOpen: #FFFFFF;
+$dropDownMenuBgColor: #CCCCCC;
+$hamLineColor: #000000;
+
+// Mobile Menu Colors
+$mobileLinkColorNormal: #FF0000;
+$mobileLinkColorHover: #FFFFFF;
+$mobileLinkBgColorHover: #000000;
+
+// Desktop Menu Colors
+$desktopLinkColorNormal: #FFFFFF;
+$desktopLinkColorHover: #FFFFFF;
+$desktopLinkBorderColorHover: #FF0000;
